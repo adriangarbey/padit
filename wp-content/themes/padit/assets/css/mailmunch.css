@@ -1,0 +1,18 @@
+#mailmunch-optin-form{
+    background-color: transparent;
+    border: none !important;
+}
+
+.theme #mailmunch-optin-form {
+    padding: 0;
+    border: transparent;
+}
+
+#mailmunch-optin-form .headline{
+    display: none !important;
+}
+
+#mailmunch-optin-form .text{
+    margin: 0 !important;
+    display: none !important;
+}

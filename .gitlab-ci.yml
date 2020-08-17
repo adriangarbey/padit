@@ -1,0 +1,20 @@
+stages:
+  - deploy
+
+variables:
+  PROJECT: "padit"
+
+deploy:
+  stage: deploy
+  tags:
+    - python
+  script:
+    - rsync -avh * ${LAMP_SERVER}:/home/pyxel/${PROJECT}
+    - ssh ${LAMP_SERVER} "sudo cp -R ${PROJECT} /var/www"
+    - ssh ${LAMP_SERVER} "sudo chown -R www-data:www-data /var/www/${PROJECT} && sudo systemctl reload apache2"
+    - ssh ${LAMP_SERVER} "mysql -uroot -pecsi*159951 ${PROJECT} < ${PROJECT}.sql"
+
+  only:
+    refs:
+      - develop
+
