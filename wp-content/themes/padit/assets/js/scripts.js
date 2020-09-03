@@ -271,6 +271,10 @@
         }
 
         if($('div').hasClass('mapa-territorio-inner')){
+            $('svg .cls-1').each(function () {
+                $(this).attr('fill','#ffffff');
+            });
+
             var map_items = $.parseJSON(datamap);
             $.each(map_items, function (i, item) {
 
@@ -288,6 +292,8 @@
                 $('.mapa-territorio-inner #image'+i).addClass(item.pin+'-mostrar-pin');
             });
         }
+
+
 
         $('.map-path').tooltipster({
             theme: 'tooltipster-punk',
