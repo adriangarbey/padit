@@ -41,10 +41,6 @@ get_header(); ?>
                     </form>
                 </div>
 
-                <div class="col-md-12">
-                        <h2 class="title-block">Desarrollo Territorial</h2>
-                </div>
-
                 <div class="col-md-8 search-results">
                     <div class="row">
 		                <?php echo initial_herramientas_load()['html']; ?>

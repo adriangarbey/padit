@@ -46,6 +46,13 @@ $query    = new WP_Query( array(
 	'post_type'      => 'territorio',
 	'posts_per_page' => 999,
 	'post_status'    => 'publish',
+    'meta_query' => array(
+        array(
+            'key'     => 'mostar_en_portada_ter',
+            'value'   => 'si',
+            'compare' => '='
+        )
+    )
 ) );
 $posts    = $query->posts;
 $cantidad = $query->post_count;

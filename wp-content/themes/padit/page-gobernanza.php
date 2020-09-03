@@ -28,6 +28,15 @@ get_header(); ?>
 		<?php if(has_post_thumbnail()): ?>
         <section class="page-goberzanza-image">
             <div class="page-content-image">
+                <?php if(!empty(get_field('grupo_de_gestion'))): ?>
+                    <div class="grupo-gestion"><div class="ghover" title="<?php echo get_field('grupo_de_gestion'); ?>"></div></div>
+                <?php endif; ?>
+                <?php if(!empty(get_field('comite_nacional'))): ?>
+                    <div class="comite-coordinacion"><div class="ghover" title="<?php echo get_field('comite_nacional'); ?>"></div></div>
+                <?php endif; ?>
+                <?php if(!empty(get_field('secretaria_tecnica'))): ?>
+                    <div class="secretaria-tecnica"><div class="ghover" title="<?php echo get_field('secretaria_tecnica'); ?>"></div></div>
+                <?php endif; ?>
 				<?php the_post_thumbnail(); ?>
             </div>
         </section>

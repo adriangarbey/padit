@@ -1167,7 +1167,7 @@ header .header-inner.header-fixed #mega-menu-wrap-main_menu ul#mega-menu-main_me
     padding: 20px 40px 50px 40px;
   }
   #slide .owl-controls-imagen-portada {
-    left: 50%;
+    left: 50% !important;
     transform: translateX(-50%);
     bottom: 20px;
   }
@@ -2533,6 +2533,48 @@ header .header-inner.header-fixed #mega-menu-wrap-main_menu ul#mega-menu-main_me
 }
 .page-template-page-gobernanza .page-goberzanza-image {
   margin-top: 30px;
+  position: relative;
+}
+.page-template-page-gobernanza .page-goberzanza-image .grupo-gestion,
+.page-template-page-gobernanza .page-goberzanza-image .comite-coordinacion,
+.page-template-page-gobernanza .page-goberzanza-image .secretaria-tecnica {
+  cursor: pointer;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+}
+.page-template-page-gobernanza .page-goberzanza-image .grupo-gestion .ghover,
+.page-template-page-gobernanza .page-goberzanza-image .comite-coordinacion .ghover,
+.page-template-page-gobernanza .page-goberzanza-image .secretaria-tecnica .ghover {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+}
+.page-template-page-gobernanza .page-goberzanza-image .grupo-gestion.grupo-gestion,
+.page-template-page-gobernanza .page-goberzanza-image .comite-coordinacion.grupo-gestion,
+.page-template-page-gobernanza .page-goberzanza-image .secretaria-tecnica.grupo-gestion {
+  top: 45.5%;
+  left: 7.7%;
+  width: 17%;
+  height: 24.8%;
+}
+.page-template-page-gobernanza .page-goberzanza-image .grupo-gestion.comite-coordinacion,
+.page-template-page-gobernanza .page-goberzanza-image .comite-coordinacion.comite-coordinacion,
+.page-template-page-gobernanza .page-goberzanza-image .secretaria-tecnica.comite-coordinacion {
+  top: 5.5%;
+  left: 57%;
+  width: 11%;
+  height: 16.5%;
+}
+.page-template-page-gobernanza .page-goberzanza-image .grupo-gestion.secretaria-tecnica,
+.page-template-page-gobernanza .page-goberzanza-image .comite-coordinacion.secretaria-tecnica,
+.page-template-page-gobernanza .page-goberzanza-image .secretaria-tecnica.secretaria-tecnica {
+  top: 26.5%;
+  left: 57.7%;
+  width: 9.5%;
+  height: 14%;
 }
 .page-template-page-gobernanza .page-generic-content {
   display: none;

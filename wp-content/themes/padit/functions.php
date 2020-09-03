@@ -131,6 +131,7 @@ add_action( 'login_enqueue_scripts', 'padit_login_stylesheet' );
  */
 function padit_register_scripts() {
 
+    wp_enqueue_script( 'animate-js', get_template_directory_uri() . '/vendors/animate/wow.min.js', array('jquery'), NULL, true );
 	wp_enqueue_script( 'svg-pan-js', get_template_directory_uri() . '/vendors/svg-pan-zoom/jquery.svg.pan.zoom.js' );
 	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery-1.12.2.min.js' );
 	wp_enqueue_script( 'tooltipster-js', get_template_directory_uri() . '/vendors/tooltipster/tooltipster.bundle.min.js' );
@@ -146,6 +147,8 @@ function padit_register_scripts() {
 	wp_localize_script('padit-js', 'data_map', data_map() );
 	wp_localize_script('padit-js', 'security_search', wp_create_nonce('enoc_search_wfc7'));
 	wp_localize_script('padit-js', 'security_search_herramientas', wp_create_nonce('enoc_search_wfc7her'));
+
+
 
 	if ( is_front_page() ): $front = 'true';
 	else: $front = 'false'; endif;

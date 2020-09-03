@@ -61,7 +61,7 @@ get_header(); ?>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="title-block">APORTE PADIT A LOS ODS</h2>
+                            <h2 class="title-block">Contribución de PADIT</h2>
                         </div>
                     </div>
                 </div>
@@ -69,10 +69,10 @@ get_header(); ?>
                     <div class="row">
 						<?php $count = 1;
 						foreach ( $posts as $historia ) : $id = $historia->ID; ?>
-                            <div class="col-xs-12 col-md-6 col-lg-4">
+                            <div class="col-xs-12 col-md-6 col-lg-4 wow fadeIn">
                                 <div class="ods-item">
 									<?php echo wp_get_attachment_image( get_field( 'image_ods', $id ), 'ods-image', '', array( 'class' => 'ods-item-image' ) ); ?>
-                                    <div class="ods-item-percent"
+                                    <div class="ods-item-percent  wow slideInUp" data-wow-delay="1s" data-wow-duration=".5s"
                                          style="height: <?php echo get_field( 'porciento_de_cumplimiento_ods', $id ); ?>%; background: <?php echo get_field( 'color_ods', $id ) ?>"></div>
                                     <div class="ods-item-inner-content">
                                         <div class="ods-item-icon">

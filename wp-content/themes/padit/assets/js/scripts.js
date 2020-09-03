@@ -65,6 +65,15 @@
             $(".footer-contact-form").css('margin-left', footer_logo_left + 'px');
         });
 
+
+        var footer_logo_left = parseInt($('.footer-options .row').position().left);
+        $(".page-template-page-home #slide .owl-controls-imagen-portada").css('left', footer_logo_left + 'px');
+        $(window).resize(function () {
+            var footer_logo_left = parseInt($('.footer-options .row').position().left);
+            $(".page-template-page-home #slide .owl-controls-imagen-portada").css('left', footer_logo_left + 'px');
+        });
+
+
         $('.search-form button').click(function (e) {
             if ($(this).hasClass('closed-search')) {
                 $(this).removeClass('closed-search');
@@ -264,13 +273,18 @@
         if($('div').hasClass('mapa-territorio-inner')){
             var map_items = $.parseJSON(datamap);
             $.each(map_items, function (i, item) {
-                $('.mapa-territorio-inner #'+i).addClass('map-path');
-                $('.mapa-territorio-inner #'+i).addClass(item.fase);
-                $('.mapa-territorio-inner #'+i).attr('title',item.title);
-                $('.mapa-territorio-inner #'+i).attr('data-url',item.url);
+
+                //$('.mapa-territorio-inner #'+i).addClass('map-path');
+                //$('.mapa-territorio-inner #'+i).addClass(item.fase);
+                //$('.mapa-territorio-inner #'+i).attr('title',item.title);
+               // $('.mapa-territorio-inner #'+i).attr('data-url',item.url);
                 if(item.color!='null'){
                     $('.mapa-territorio-inner #'+i).attr('fill',item.color);
                 }
+
+                $('.mapa-territorio-inner #image'+i).attr('title',item.title);
+                $('.mapa-territorio-inner #image'+i).attr('data-url',item.url);
+                $('.mapa-territorio-inner #image'+i).addClass('map-path');
                 $('.mapa-territorio-inner #image'+i).addClass(item.pin+'-mostrar-pin');
             });
         }
@@ -291,6 +305,12 @@
                 tap: true,
                 mouseleave: true
             }
+        });
+
+        $('.ghover').tooltipster({
+            theme: 'tooltipster-punk',
+            'maxWidth': 270,
+            contentAsHTML: true,
         });
 
         $('.mapa-territorio-inner .map-path').click(function () {
