@@ -15,25 +15,7 @@ get_header(); ?>
                                 <div class="mapa-territorio-leyenda">
                                     <div class="leyenda-title">Leyenda</div>
                                     <div class="leyenda-item d-flex align-items-center">
-                                        <div class="leyenda-item-icon leyenda-item-primerafase"></div><div class="leyenda-item-text">Provincias Primera Fase ( 2014 - 2017 )</div>
-                                    </div>
-                                    <div class="leyenda-item d-flex align-items-center">
-                                        <div class="leyenda-item-icon leyenda-item-segundafase"></div><div class="leyenda-item-text">Provincias Segunda Fase ( 2018 - 2021 )</div>
-                                    </div>
-                                    <div class="leyenda-item d-flex align-items-center">
-                                        <div class="leyenda-item-icon leyenda-item-icon-start d-flex align-items-center">
-                                            <div class="leyenda-item-start gray"><?php echo '<img src="'.get_template_directory_uri().'/assets/images/star.svg">'; ?></div>
-                                        </div>
-                                        <div class="leyenda-item-text">Iniciativa Municipal</div>
-                                    </div>
-                                    <div class="leyenda-item d-flex align-items-center">
-                                        <div class="leyenda-item-icon leyenda-item-icon-start d-flex align-items-center">
-                                            <div class="leyenda-item-start yellow"><?php echo '<img src="'.get_template_directory_uri().'/assets/images/star.svg">'; ?></div>
-                                            <div class="leyenda-item-start purple"><?php echo '<img src="'.get_template_directory_uri().'/assets/images/star.svg">'; ?></div>
-                                            <div class="leyenda-item-start green"><?php echo '<img src="'.get_template_directory_uri().'/assets/images/star.svg">'; ?></div>
-                                            <div class="leyenda-item-start blue"><?php echo '<img src="'.get_template_directory_uri().'/assets/images/star.svg">'; ?></div>
-                                        </div>
-                                        <div class="leyenda-item-text">Iniciativas Intermunicipales</div>
+                                        <div class="leyenda-item-icon leyenda-item-primerafase"></div><div class="leyenda-item-text">"Provincias PADIT con financiamiento de la colaboración para el desarrollo territorial"</div>
                                     </div>
                                 </div>
                                 <div class="mapa-territorio-buttons d-flex align-items-center">
