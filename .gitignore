@@ -9,6 +9,7 @@ wp-content/cache/
 wp-content/upgrade/
 wp-content/wp-cache-config.php
 license.txt
+.gitlab-ci.yml
 readme.html
 sitemap.xml
 sitemap.xml.gz
