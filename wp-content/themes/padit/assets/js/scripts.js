@@ -2,7 +2,20 @@
 
     var ajaxurl = admin_url + 'admin-ajax.php';
 
+    function autoresize(textarea) {
+        textarea.style.height = '0px';     //Reset height, so that it not only grows but also shrinks
+        textarea.style.height = (textarea.scrollHeight+10) + 'px';    //Set new height
+    }
+
     $(function () {
+
+        $("#footer-contact-form textarea").each(function () {
+            this.style.height = '51px';
+        });
+
+        $('#footer-contact-form textarea').keyup(function () {
+            autoresize(this);
+        });
 
         $('.footer-search-form').submit(function (e) {
             e.preventDefault();
@@ -63,14 +76,6 @@
         $(window).resize(function () {
             var footer_logo_left = parseInt($('.footer-options .row').position().left);
             $(".footer-contact-form").css('margin-left', footer_logo_left + 'px');
-        });
-
-
-        var footer_logo_left = parseInt($('.footer-options .row').position().left);
-        $(".page-template-page-home #slide .owl-controls-imagen-portada").css('left', footer_logo_left + 'px');
-        $(window).resize(function () {
-            var footer_logo_left = parseInt($('.footer-options .row').position().left);
-            $(".page-template-page-home #slide .owl-controls-imagen-portada").css('left', footer_logo_left + 'px');
         });
 
 
@@ -203,7 +208,7 @@
                 items: 3,
                 loop: false,
                 margin: 40,
-                nav: false,
+                nav: true,
                 autoHeight: true,
                 responsive: {
                     0: {
@@ -220,10 +225,8 @@
                     }
                 }
             });
-            /*var numItems = 100 / $('.row-noticias-home .owl-dots button').length;
-            $(".row-noticias-home .owl-dots button").css('flex', '0 0 ' + numItems + '%');
-            $(".row-noticias-home .owl-dots button").css('-ms-flex', '0 0 ' + numItems + '%');
-            $(".row-noticias-home .owl-dots button").css('width', numItems + '%');*/
+            $('#noticias .owl-nav, #noticias .owl-dots').wrapAll("<div class='owl-controls-noticias'></div>");
+            $('.owl-controls-noticias').wrapAll("<div class='owl-controls-noticias-portada'></div>");
         }
 
         if ($('.slide-container').hasClass('slide-container')) {
@@ -240,6 +243,13 @@
             $('.slide-container .owl-nav, .slide-container .owl-dots').wrapAll("<div class='owl-controls'></div>");
             $('.owl-controls').wrapAll("<div class='owl-controls-imagen-portada'></div>");
         }
+
+        var footer_logo_left = (parseInt($('.territorio-item-content').width()) - $('.owl-controls-imagen-portada').width())/2;
+        $(".page-template-page-home #slide .owl-controls-imagen-portada").css('right', footer_logo_left + 'px');
+        $(window).resize(function () {
+            var footer_logo_left = (parseInt($('.territorio-item-content').width()) - $('.owl-controls-imagen-portada').width())/2;
+            $(".page-template-page-home #slide .owl-controls-imagen-portada").css('right', footer_logo_left + 'px');
+        });
 
         if ($('.slide-historias-container').hasClass('slide-historias-container')) {
             $('.slide-historias-container').owlCarousel({
@@ -285,6 +295,7 @@
                 if(item.color!='null'){
                     $('.mapa-territorio-inner #'+i).attr('fill',item.color);
                 }
+
 
                 $('.mapa-territorio-inner #image'+i).attr('title',item.title);
                 $('.mapa-territorio-inner #image'+i).attr('data-url',item.url);
@@ -475,11 +486,7 @@
 
         }
 
-        $('.categoria_herramienta_select').select2({
-            multiple: true,
-            placeholder: "Seleccione una categoría",
-            minimumResultsForSearch: -1,
-        });
+        $('.categoria_herramienta_select').select2();
 
         $(".categoria_select_elements_item").click(function() {
             if($(this).hasClass('active')){
@@ -509,6 +516,16 @@
         $(".load__more").click(function (e) {
             e.preventDefault();
             add_herrmientas();
+        });
+
+        $("form.search-formacion-form").submit(function (e) {
+            e.preventDefault();
+            search_formacion();
+        });
+
+        $("form.search-formacion-form select").change(function (e) {
+            e.preventDefault();
+            search_formacion();
         });
 
 
@@ -545,6 +562,79 @@
                 $(".pagination__button span").html('No se encontraron herramientas.');
                 $(".pagination__button").removeClass('loading');
             }
+        });
+    }
+
+    function search_formacion(){
+        $("[name='pager']").val(1);
+        $(".search-results .row").html('');
+        var form = $(".search-formacion-form").serialize();
+        var data = {
+            action: "load_formacion",
+            data: form,
+            security: security_search_herramientas
+        };
+        $.post(ajaxurl, data, function(response) {
+            var obj = $.parseJSON(response);
+            $(".formacion-wrapper-content").html(obj.html);
+
+            if ($('.slide-herramientas-desarrollo').hasClass('slide-herramientas-desarrollo')) {
+                $('.slide-herramientas-desarrollo').owlCarousel({
+                    margin: 25,
+                    responsiveClass: true,
+                    nav: true,
+                    items: 3,
+                    loop: false,
+                    responsive: {
+                        0: {
+                            items: 1,
+                        },
+                        575: {
+                            items: 2,
+                        },
+                        768: {
+                            items: 2,
+                        },
+                        992: {
+                            items: 3,
+                        },
+                        1200: {
+                            items: 3,
+                        }
+                    }
+                });
+            }
+
+
+
+            if ($('.slide-formacion-cursos').hasClass('slide-formacion-cursos')) {
+                $('.slide-formacion-cursos').owlCarousel({
+                    margin: 25,
+                    responsiveClass: true,
+                    nav: true,
+                    items: 3,
+                    loop: false,
+                    responsive: {
+                        0: {
+                            items: 1,
+                        },
+                        575: {
+                            items: 2,
+                        },
+                        768: {
+                            items: 2,
+                        },
+                        992: {
+                            items: 3,
+                        },
+                        1200: {
+                            items: 3,
+                        }
+                    }
+                });
+                $('.pretty-embed').prettyEmbed();
+            }
+
         });
     }
 

@@ -24,6 +24,17 @@ get_header(); ?>
                 </div>
             </div>
         </section>
+        <main class="page-generic-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page-content">
+                            <?php the_content() ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
 	<?php endif; ?>
 		<?php if(has_post_thumbnail()): ?>
         <section class="page-goberzanza-image">
@@ -41,18 +52,6 @@ get_header(); ?>
             </div>
         </section>
 	<?php endif; ?>
-        <main class="page-generic-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="page-content">
-							<?php the_content() ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
 	<?php endwhile; ?>
 <?php endif; ?>
 

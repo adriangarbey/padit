@@ -26,8 +26,8 @@ get_header(); ?>
                             <input type="text" name="search_name" class="search_name" placeholder="">
                             <button type="submit">Buscar</button>
                         </div>
-                        <select name="categoria_select[]" multiple class="categoria_herramienta_select">
-                            <option value="">Seleccione categoría</option>
+                        <select name="categoria_select" class="categoria_herramienta_select">
+                            <option value="0">Seleccione una categoría</option>
 		                    <?php $tags = get_terms([
 			                    'taxonomy' => 'tipo_herramienta',
 			                    'hide_empty' => false,
@@ -41,7 +41,7 @@ get_header(); ?>
                     </form>
                 </div>
 
-                <div class="col-md-8 search-results">
+                <div class="col-md-12 search-results">
                     <div class="row">
 		                <?php echo initial_herramientas_load()['html']; ?>
                     </div>
@@ -52,19 +52,6 @@ get_header(); ?>
                             <a href="#" class="pagination__button all-loaded button"><span>Todas las herramientas mostradas</span></a>
                         <?php endif; ?>
                     </div>
-                </div>
-                <div class="col-md-4 search-select">
-	                <?php $tags = get_terms([
-		                'taxonomy' => 'tipo_herramienta',
-		                'hide_empty' => false,
-	                ]);
-	                if ( $tags ) {
-	                    echo "<div class='categoria_select_elements'><h2>Seleccione categoría</h2>";
-		                foreach ( $tags as $tag ) {
-			                echo '<div target_id="' . $tag->term_id . '" class="categoria_select_elements_item"><div class="categoria_select_elements_item_inner">' . $tag->name . '</div></div>';
-		                }
-		                echo "</div>";
-	                } ?>
                 </div>
             </div>
         </div>

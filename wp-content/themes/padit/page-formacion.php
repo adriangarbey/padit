@@ -14,6 +14,35 @@ get_header(); ?>
                 <?php echo wp_get_attachment_image( get_field( 'pagina_imagen_encabezado', get_the_ID() ), 'full' ); ?>
             </section>
 	    <?php endif; ?>
+        <section id="search-formacion">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="search-formacion-form">
+                            <?php wp_nonce_field('herramientas_search'); ?>
+                            <input type="hidden" name="pager" id="pager" value="1" />
+                            <div class="d-flex">
+                                <input type="text" name="search_name" class="search_name" placeholder="">
+                                <button type="submit">Buscar</button>
+                            </div>
+                            <select name="categoria_select" class="categoria_herramienta_select">
+                                <option value="0">Seleccione una categoría</option>
+                                <?php $tags = get_terms([
+                                    'taxonomy' => 'cat_formacion',
+                                    'hide_empty' => false,
+                                ]);
+                                if ( $tags ) {
+                                    foreach ( $tags as $tag ) {
+                                        echo '<option value="' . $tag->term_id . '">' . $tag->name . '</option> ';
+                                    }
+                                } ?>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <div class="formacion-wrapper-content">
 		<?php
             $query    = new WP_Query( array(
                 'post_type'      => 'formacion',
@@ -141,7 +170,7 @@ get_header(); ?>
                 </div>
             </section>
 		<?php endif; ?>
-
+    </div>
 
 	<?php endwhile; ?>
 <?php endif; ?>

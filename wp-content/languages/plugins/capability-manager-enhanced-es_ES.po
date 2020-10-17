@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - PublishPress Capabilities: Manage WordPress Permissions and Edit User Roles - Development (trunk) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-08-24 13:02:35+0000\n"
+"PO-Revision-Date: 2020-10-02 11:08:55+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,11 +11,67 @@ msgstr ""
 "Language: es\n"
 "Project-Id-Version: Plugins - PublishPress Capabilities: Manage WordPress Permissions and Edit User Roles - Development (trunk)\n"
 
-#: includes/admin.php:1125
+#: includes/backup.php:195
+msgid "(this role will be removed if you restore backup)"
+msgstr "(este perfil será eliminado si restauras la copia de seguridad)"
+
+#: includes/backup.php:155
+msgid "Show changes from current roles only"
+msgstr "Mostrar solo los cambios de los perfiles actuales"
+
+#: includes/backup.php:144
+msgid "Restore Selected Roles"
+msgstr "Restaurar los perfiles seleccionados"
+
+#: includes/backup.php:135
+msgid "Initial backup of all roles"
+msgstr "Copia de seguridad inicial de todos los perfiles"
+
+#: includes/backup.php:127
+msgid "Auto-backup of all roles (%s)"
+msgstr "Copia de seguridad automática de todos los perfiles (%s)"
+
+#: includes/backup.php:112
+msgid "Manual backup of all roles (%s)"
+msgstr "Copia de seguridad manual de todos los perfiles (%s)"
+
+#: includes/backup.php:98
+msgid "Available Backups:"
+msgstr "Copias de seguridad disponibles:"
+
+#: includes/backup.php:93
+msgid "On this screen, you can restore an earlier version of your roles and capabilities."
+msgstr "En esta pantalla, puedes restaurar una versión anterior de tus perfiles y capacidades."
+
+#: includes/backup.php:89
+msgid "PublishPress Capabilities automatically creates a backup on installation and whenever you save changes."
+msgstr "PublishPress Capabilities crea automáticamente una copia de seguridad en la instalación y cada vez que se guardan los cambios."
+
+#: includes/backup.php:86
+msgid "Restore Previous Roles and Capabilities"
+msgstr "Restaurar los perfiles y capacidades anteriores"
+
+#: includes/backup.php:72
+msgid "Manual Backup"
+msgstr "Copia de seguridad manual"
+
+#: includes/backup.php:67
+msgid "A backup created on this screen replaces any previous manual backups, but is never automatically replaced."
+msgstr "Una copia de seguridad creada en esta pantalla reemplaza cualquier copia de seguridad manual anterior, pero nunca es reemplazada automáticamente."
+
+#: includes/backup.php:62
+msgid "PublishPress Capabilities automatically creates a backup on installation and whenever you save changes. The initial backup and last %d auto-backups are kept."
+msgstr "PublishPress Capabilities crea automáticamente una copia de seguridad en la instalación y cada vez que se guardan los cambios. Se mantiene la copia de seguridad inicial y las últimas %d copias de seguridad automáticas."
+
+#: includes/admin.php:1134
+msgid "Rename"
+msgstr "Renombrar"
+
+#: includes/admin.php:1131
 msgid "New Role Name"
 msgstr "Nuevo nombre de perfil"
 
-#: includes/admin.php:1123
+#: includes/admin.php:1129
 msgid "Rename Role"
 msgstr "Renombrar perfil"
 
@@ -23,36 +79,20 @@ msgstr "Renombrar perfil"
 msgid "Role \"%s\" (id %s) renamed to \"%s\""
 msgstr "El perfil «%s» (ID %s) ha sido renombrado a «%s»"
 
-#: includes/admin.php:1128
-msgid "Rename"
-msgstr "Renombrar"
-
 #: includes/manager.php:415 includes/manager.php:456
 msgid "You do not have permission to manage capabilities."
 msgstr "No tienes permisos para gestionar capacidades."
 
-#: includes/backup.php:111
+#: includes/backup.php:82
 msgid "Last Manual Backup - %s"
 msgstr "Última copia de seguridad manual: %s"
 
-#: includes/backup.php:76
-msgid "To view the contents of a backup, select it in the dropdown above."
-msgstr "Para ver el contenido de una copia de seguridad, selecciónala en el menú desplegable de arriba."
-
-#: includes/backup.php:69
-msgid "Restore auto-backup (%s)"
-msgstr "Restaurar la copia de seguridad automática (%s)"
-
-#: includes/backup.php:62
-msgid "Restore last manually saved backup"
-msgstr "Restaurar la última copia de seguridad guardada"
-
-#: includes/backup-handler.php:68
+#: includes/backup-handler.php:76
 msgid "Roles and Capabilities restored from selected auto-backup."
 msgstr "Los perfiles y capacidades se han restaurado desde la copia de seguridad automática seleccionada."
 
-#: includes/functions-admin.php:41 includes/functions-admin.php:42
 #: includes/manager.php:314 includes/manager.php:315
+#: includes/functions-admin.php:41 includes/functions-admin.php:42
 msgid "Upgrade to Pro"
 msgstr "Actualiza a Pro"
 
@@ -60,29 +100,25 @@ msgstr "Actualiza a Pro"
 msgid "<strong>This plugin can be deleted.</strong>"
 msgstr "<strong>Este plugin puede ser eliminado.</strong>"
 
-#: includes/backup.php:143
+#: includes/backup.php:224
 msgid "%s (level %s)"
 msgstr "%s (nivel %s)"
 
-#: includes/backup.php:127
+#: includes/backup.php:187
 msgid "%s (%s roles)"
 msgstr "%s (%s perfiles)"
 
-#: includes/backup.php:111
+#: includes/backup.php:82
 msgid "Last Backup"
 msgstr "Última copia de seguridad"
 
-#: includes/backup.php:110
+#: includes/backup.php:161
 msgid "Initial Backup"
 msgstr "Copia de seguridad inicial"
 
-#: includes/backup.php:110
+#: includes/backup.php:161
 msgid "Initial Backup - %s"
 msgstr "Copia de seguridad inicial: %s"
-
-#: includes/backup.php:59
-msgid "Restore initial backup"
-msgstr "Restaurar copia de seguridad inicial"
 
 #: includes/backup.php:39
 msgid "Backup Tool for %1$sPublishPress Capabilities%2$s"
@@ -128,7 +164,7 @@ msgstr "Añadir nuevo"
 msgid "All %s"
 msgstr "Todos los %s"
 
-#: includes/backup-handler.php:50
+#: includes/backup-handler.php:58
 msgid "Roles and Capabilities restored from initial backup."
 msgstr "Los perfiles y capacidades se han restaurado desde la copia de seguridad inicial."
 
@@ -160,63 +196,63 @@ msgstr "Acerca de PublishPress Capabilities"
 msgid "If you like %s, please leave us a %s rating. Thank you!"
 msgstr "Si te gusta %s, por favor déjanos una valoración de %s. ¡Gracias!"
 
-#: includes/admin.php:1168
+#: includes/admin.php:1174
 msgid "Help / Contact Form"
 msgstr "Ayuda / formulario de contacto"
 
-#: includes/admin.php:1166
+#: includes/admin.php:1172
 msgid "PublishPress Revisions"
 msgstr "PublishPress Revisions"
 
-#: includes/admin.php:1152
+#: includes/admin.php:1158
 msgid "Multiple Authors"
 msgstr "Multiple Authors"
 
-#: includes/admin.php:1149
+#: includes/admin.php:1155
 msgid "Related Permissions Plugins"
 msgstr "Plugins de permisos relacionados"
 
-#: includes/admin.php:1144
+#: includes/admin.php:1150
 msgid "Backup / Restore Roles"
 msgstr "Copia de seguridad y restauración de perfiles"
 
-#: includes/admin.php:1142
+#: includes/admin.php:1148
 msgid "Backup Tool"
 msgstr "Herramienta de copia de seguridad"
 
-#: includes/admin.php:1094 includes/admin.php:1110
+#: includes/admin.php:1100 includes/admin.php:1116
 msgid "Role Name"
 msgstr "Nombre del perfil"
 
-#: includes/admin.php:1033
+#: includes/admin.php:1039
 msgid "Role Level:"
 msgstr "Nivel del perfil:"
 
-#: includes/admin.php:1032
+#: includes/admin.php:1038
 msgid "Role level is mostly deprecated. However, it still determines eligibility for Post Author assignment and limits the application of user editing capabilities."
 msgstr "El nivel de los perfiles está prácticamente obsoleto. Sin embargo, aún determina la elegibilidad para la asignación del autor de la entrada y limita la aplicación de las capacidades de edición del usuario."
 
-#: includes/admin.php:942
+#: includes/admin.php:948
 msgid "Invalid Capabilities"
 msgstr "Capacidades no válidas"
 
-#: includes/admin.php:941
+#: includes/admin.php:947
 msgid "Meta capabilities are used in code as placeholders for other capabilities. Assiging to a role has no effect."
 msgstr "Las capacidades meta se usan en el código como marcadores de posición para otras capacidades. Asignar un perfil no tiene ningún efecto."
 
-#: includes/admin.php:758
+#: includes/admin.php:764
 msgid "%s Capabilities"
 msgstr "Capacidades de %s"
 
-#: includes/admin.php:541
+#: includes/admin.php:547
 msgid "Lockout Prevention: To remove read capability, first remove WordPress admin / editing capabilities, or add \"dashboard_lockout_ok\" capability"
 msgstr "Prevención de bloqueo: para eliminar la capacidad de lectura, primero elimina las capacidades de gestión y edición de WordPress, o añade la capacidad «dashboard_lockout_ok»."
 
-#: includes/admin.php:431
+#: includes/admin.php:433
 msgid "shared capability: %s"
 msgstr "capacidad compartida: %s"
 
-#: includes/admin.php:133 includes/admin.php:1155
+#: includes/admin.php:133 includes/admin.php:1161
 msgid "PublishPress Permissions"
 msgstr "Permisos de PublishPress"
 
@@ -232,18 +268,34 @@ msgstr "<strong>Note:</strong> Capability changes <strong>remain in the database
 msgid "Warning: This role cannot access the dashboard without the read capability. %1$sClick here to fix this now%2$s."
 msgstr "Advertencia: Este perfil no puede acceder al escritorio sin la capacidad de lectura. %1$sHaz clic aquí para corregir esto ahora%2$s."
 
-#: includes/functions-admin.php:36 includes/manager.php:309
+#: includes/manager.php:309 includes/functions-admin.php:36
 msgid "Backup"
 msgstr "Copia de seguridad"
 
-#: includes/filters.php:298
+#: includes/filters.php:309
 msgid "Edit Roles"
 msgstr "Editar perfiles"
 
+#. Author URI of the plugin
+msgid "https://publishpress.com/"
+msgstr "https://publishpress.com/"
+
 #. Author of the plugin
-#: includes/admin.php:1161
+#: includes/admin.php:1167
 msgid "PublishPress"
 msgstr "PublishPress"
+
+#. Plugin URI of the plugin
+msgid "https://publishpress.com/capability-manager/"
+msgstr "https://publishpress.com/capability-manager/"
+
+#. Plugin Name of the plugin
+msgid "PublishPress Capabilities"
+msgstr "PublishPress Capabilities"
+
+#. Description of the plugin
+msgid "Manage WordPress role definitions, per-site or network-wide. Organizes post capabilities by post type and operation."
+msgstr "Gestiona las definiciones de los perfiles de WordPress, por sitio o en toda la red. Organiza las capacidades de las entradas por tipo de contenido y operación."
 
 #: includes/pp-ui.php:164 includes/pp-ui.php:227 includes/pp-ui.php:283
 msgid "Update"
@@ -317,11 +369,11 @@ msgstr "Error: no se ha podido crear el nuevo perfil."
 msgid "New role created."
 msgstr "Se ha creado un nuevo perfil."
 
-#: includes/backup.php:171
+#: includes/backup.php:273
 msgid "Reset to WordPress defaults"
 msgstr "Restablecer a los valores por defecto de WordPress"
 
-#: includes/backup.php:171
+#: includes/backup.php:273
 msgid ""
 "You are about to reset Roles and Capabilities to WordPress defaults.\n"
 " 'Cancel' to stop, 'OK' to reset."
@@ -329,64 +381,52 @@ msgstr ""
 "Estás a intentando restablecer los perfiles y capacidades a los valores por defecto de WordPress.\n"
 "«Cancelar» para detener, «Aceptar» para restablecer."
 
-#: includes/backup.php:171
+#: includes/backup.php:271
 msgid "Reset Roles and Capabilities to WordPress defaults"
 msgstr "Restablecer perfiles y capacidades a los valores por defecto de WordPress"
 
-#: includes/backup.php:170
+#: includes/backup.php:268
 msgid "It is recommended to use this only as a last resource!"
 msgstr "¡Se recomienda usar esta opción solo como último recurso!"
 
-#: includes/backup.php:169
+#: includes/backup.php:266
 msgid "If you have installed any plugin that adds new roles or capabilities, these will be lost."
 msgstr "Si has instalado algún plugin que añade nuevos perfiles o capacidades, estos se perderán."
 
-#: includes/backup.php:166
+#: includes/backup.php:262
 msgid "Reseting default Roles and Capabilities will set them to the WordPress install defaults."
 msgstr "Al restablecer los perfiles y capacidades por defecto, los establecerá a los valores por defecto de la instalación de WordPress."
 
-#: includes/backup.php:166
+#: includes/backup.php:262
 msgid "WARNING:"
 msgstr "ADVERTENCIA:"
 
-#: includes/backup.php:164
+#: includes/backup.php:259
 msgid "Reset WordPress Defaults"
 msgstr "Restaurar a los valores por defecto de WordPress"
 
-#: includes/backup.php:72
-msgid "Do Action"
-msgstr "Ejecutar acción"
+#: includes/backup.php:57
+msgid "Backup Roles and Capabilities"
+msgstr "Copia de seguridad de los perfiles y capacidades"
 
-#: includes/backup.php:55
-msgid "Backup roles and capabilities"
-msgstr "Crear una copia de seguridad de los perfiles y capacidades"
-
-#: includes/backup.php:52
-msgid "Select action:"
-msgstr "Selecciona una acción:"
-
-#: includes/backup.php:48
-msgid "Backup and Restore"
-msgstr "Guardar y restaurar"
-
-#: includes/backup-handler.php:101
+#: includes/backup-handler.php:109
 msgid "Roles and Capabilities reset to WordPress defaults"
 msgstr "Se han restablecido los perfiles y capacidades a los valores por defecto de WordPress"
 
-#: includes/backup-handler.php:88
+#: includes/backup-handler.php:96
 msgid "Needed function to create default roles not found!"
 msgstr "¡No se ha encontrado la función necesaria para crear los perfiles por defecto!"
 
-#: includes/backup-handler.php:52 includes/backup-handler.php:61
-#: includes/backup-handler.php:70
+#: includes/backup-handler.php:60 includes/backup-handler.php:69
+#: includes/backup-handler.php:78
 msgid "Restore failed. No backup found."
 msgstr "Ha fallado la restauración. No se ha encontrado ninguna copia de seguridad."
 
-#: includes/backup-handler.php:59
+#: includes/backup-handler.php:67
 msgid "Roles and Capabilities restored from last backup."
 msgstr "Se han restaurado los perfiles y capacidades desde la última copia de seguridad."
 
-#: includes/backup-handler.php:44
+#: includes/backup-handler.php:42
 msgid "New backup saved."
 msgstr "Se ha guardado una nueva copia de seguridad."
 
@@ -394,67 +434,67 @@ msgstr "Se ha guardado una nueva copia de seguridad."
 msgid "You do not have permission to restore roles."
 msgstr "No tienes permisos para restaurar perfiles."
 
-#: includes/admin.php:1209
+#: includes/admin.php:1216
 msgid "sync role to all sites now"
 msgstr "sincronizar perfil a todos los sitios ahora"
 
-#: includes/admin.php:1209
+#: includes/admin.php:1216
 msgid "Copy / update this role definition to all sites now"
 msgstr "Copiar/actualizar esta definición de perfil a todos los sitios ahora"
 
-#: includes/admin.php:1206
+#: includes/admin.php:1213
 msgid "include in new sites"
 msgstr "incluir en los nuevos sitios"
 
-#: includes/admin.php:1206
+#: includes/admin.php:1213
 msgid "Create this role definition in new (future) sites"
 msgstr "Crear esta definición de perfil en nuevos (futuros) sitios"
 
-#: includes/admin.php:1137
+#: includes/admin.php:1143
 msgid "Add to role"
 msgstr "Añadir al perfil"
 
-#: includes/admin.php:1134
+#: includes/admin.php:1140
 msgid "Add Capability"
 msgstr "Añadir capacidad"
 
-#: includes/admin.php:1117
+#: includes/admin.php:1123
 msgid "Copy"
 msgstr "Copiar"
 
-#: includes/admin.php:1107
+#: includes/admin.php:1113
 msgid "Copy this role to"
 msgstr "Copiar este perfil a"
 
-#: includes/admin.php:1101
+#: includes/admin.php:1107
 msgid "Create"
 msgstr "Crear"
 
-#: includes/admin.php:1097 includes/admin.php:1113
+#: includes/admin.php:1103 includes/admin.php:1119
 msgid "hidden"
 msgstr "oculto"
 
-#: includes/admin.php:1097 includes/admin.php:1113 includes/pp-ui.php:86
+#: includes/admin.php:1103 includes/admin.php:1119 includes/pp-ui.php:86
 msgid "Make role available for supplemental assignment to Permission Groups only"
 msgstr "Hacer disponible el perfil para la asignación suplementaria a los «Grupos de permisos» solamente"
 
-#: includes/admin.php:1091
+#: includes/admin.php:1097
 msgid "Create New Role"
 msgstr "Crear nuevo perfil"
 
-#: includes/admin.php:1072
+#: includes/admin.php:1078
 msgid "Change"
 msgstr "Cambiar"
 
-#: includes/admin.php:1063
+#: includes/admin.php:1069
 msgid "Select New Role"
 msgstr "Seleccionar nuevo perfil"
 
-#: includes/admin.php:1056
+#: includes/admin.php:1062
 msgid "Delete Role"
 msgstr "Eliminar perfil"
 
-#: includes/admin.php:1056
+#: includes/admin.php:1062
 msgid ""
 "You are about to delete the %s role.\n"
 "\n"
@@ -464,39 +504,39 @@ msgstr ""
 "\n"
 " «Cancelar» para detener, «Aceptar» para borrar."
 
-#: includes/admin.php:1056
+#: includes/admin.php:1062
 msgid "Delete this role"
 msgstr "Eliminar este perfil"
 
-#: includes/admin.php:84 includes/admin.php:1053
+#: includes/admin.php:84 includes/admin.php:1059
 msgid "Save Changes"
 msgstr "Guardar los cambios"
 
-#: includes/admin.php:831
+#: includes/admin.php:837
 msgid "Additional Capabilities"
 msgstr "Capacidades adicionales"
 
-#: includes/admin.php:584 includes/admin.php:823 includes/admin.php:932
-#: includes/admin.php:1019
+#: includes/admin.php:590 includes/admin.php:829 includes/admin.php:938
+#: includes/admin.php:1025
 msgid "negate none (add/remove all capabilities normally)"
 msgstr "no negar ninguna (añadir/quitar todas las capacidades normalmente)"
 
-#: includes/admin.php:584 includes/admin.php:823 includes/admin.php:932
-#: includes/admin.php:1019
+#: includes/admin.php:590 includes/admin.php:829 includes/admin.php:938
+#: includes/admin.php:1025
 msgid "negate all (storing as disabled capabilities)"
 msgstr "negar todas (almacenar como capacidades desactivadas)"
 
-#: includes/admin.php:584 includes/admin.php:823 includes/admin.php:932
-#: includes/admin.php:1019
+#: includes/admin.php:590 includes/admin.php:829 includes/admin.php:938
+#: includes/admin.php:1025
 msgid "check/uncheck all"
 msgstr "marcar/desmarcar todas"
 
-#: includes/admin.php:499
+#: includes/admin.php:505
 msgid "Other WordPress Core Capabilities"
 msgstr "Otras capacidades del núcleo de WordPress"
 
-#: includes/admin.php:416 includes/admin.php:522 includes/admin.php:784
-#: includes/admin.php:879 includes/admin.php:976
+#: includes/admin.php:418 includes/admin.php:528 includes/admin.php:790
+#: includes/admin.php:885 includes/admin.php:982
 msgid "%s: assigned by Permission Group"
 msgstr "%s: asignada por el «Grupo de permisos»"
 
@@ -660,7 +700,7 @@ msgstr "Niega explícitamente estas capacidades almacenándolas como desactivada
 msgid "Explicity negate this capability by storing as disabled"
 msgstr "Niega explícitamente esta capacidad almacenándola como desactivada"
 
-#: includes/functions-admin.php:14 includes/manager.php:287
+#: includes/manager.php:287 includes/functions-admin.php:14
 msgid "Capabilities"
 msgstr "Capacidades"
 

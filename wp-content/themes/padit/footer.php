@@ -39,18 +39,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-contact-item form-contact-item-textarea form-contact-item-message">
-                                                <div class="form-contact-item-label d-flex align-items-center">
-                                                    <span class="form-contact-item-icon"><img src="<?php echo get_template_directory_uri()?>/assets/images/contacto-mensaje.png" /></span>
-                                                    <span class="form-contact-item-text">Mensaje: </span>
-                                                </div>
-                                                <div class="form-contact-item-input">
-                                                    <textarea name="mensaje"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="form-contact-item form-contact-item-select">
                                                 <div class="form-contact-item-label d-flex align-items-center">
                                                     <span class="form-contact-item-icon"><img src="<?php echo get_template_directory_uri()?>/assets/images/contacto-coordinador.png" /></span>
@@ -92,10 +81,18 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-md-12">
+                                            <div class="form-contact-item form-contact-item-textarea form-contact-item-message">
+                                                <div class="form-contact-item-label d-flex align-items-center">
+                                                    <span class="form-contact-item-icon"><img src="<?php echo get_template_directory_uri()?>/assets/images/contacto-mensaje.png" /></span>
+                                                    <span class="form-contact-item-text">Mensaje: </span>
+                                                </div>
+                                                <div class="form-contact-item-input">
+                                                    <textarea name="mensaje"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-
-
                                     <button>Enviar</button>
                                 </form>
                                 <div class="error-meessages"></div>
@@ -117,7 +114,10 @@
                     <div class="footer-logo">
                         <a href="<?php echo esc_url(home_url('/')) ?>" title="Inicio"><img src="<?php echo get_template_directory_uri()?>/assets/images/logo-white.png" /></a>
                     </div>
-                    <div class="footer-options flex-1 d-flex align-items-center justify-content-end">
+                    <div class="footer-message-inner">
+                        Actualizado <?php echo get_the_date('j F Y', get_the_ID())?><br/>Diseñado por Pyxel Solutions
+                    </div>
+                    <div class="footer-options d-flex align-items-center justify-content-end">
                         <div class="footer-search">
                             <form role="search" method="post"
                                   class="footer-search-form search-form d-flex align-items-center">
@@ -134,17 +134,6 @@
                         <div class="footer-social-networks d-flex align-items-center justify-content-end">
 	                        <?php echo do_shortcode('[redes_sociales]'); ?>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-message">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="footer-message-inner">
-                        Actualizado <?php echo the_date('j F Y')?><br/>PADIT Todos los derechos reservados<br/>Diseñado por Pyxel Solutions
                     </div>
                 </div>
             </div>

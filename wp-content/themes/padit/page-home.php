@@ -227,7 +227,7 @@ if ( $cantidad != 0 ): ?>
 									) );
 									$posts    = $query->posts;
 									foreach ( $posts as $element ) : $id = $element->ID; ?>
-                                        <a href="<?php echo get_field('enlace_institucion',$id); ?>"><?php echo get_the_post_thumbnail($id, 'full'); ?></a>
+                                        <a href="<?php echo get_permalink($id); ?>"><?php echo get_the_post_thumbnail($id, 'full'); ?></a>
 									<?php endforeach; ?>
                                 </div>
                                 `                           </div>
@@ -296,7 +296,7 @@ if ( $cantidad != 0 ): ?>
 									) );
 									$posts    = $query->posts;
 									foreach ( $posts as $element ) : $id = $element->ID; ?>
-                                        <a href="<?php echo get_field('enlace_institucion',$id); ?>"><?php echo get_the_post_thumbnail($id, 'full'); ?></a>
+                                        <a href="<?php echo get_permalink($id); ?>"><?php echo get_the_post_thumbnail($id, 'full'); ?></a>
 									<?php endforeach; ?>
                                 </div>
                             </div>
@@ -317,7 +317,7 @@ if ( $cantidad != 0 ): ?>
 									) );
 									$posts    = $query->posts;
 									foreach ( $posts as $element ) : $id = $element->ID; ?>
-                                        <a href="<?php echo get_field('enlace_institucion',$id); ?>"><?php echo get_the_post_thumbnail($id, 'full'); ?></a>
+                                        <a href="<?php echo get_permalink($id); ?>"><?php echo get_the_post_thumbnail($id, 'full'); ?></a>
 									<?php endforeach; ?>
                                 </div>
                             </div>
